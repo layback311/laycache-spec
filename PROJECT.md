@@ -85,17 +85,22 @@
 
 | # | 任务 | 状态 | 说明 |
 |---|------|------|------|
-| 1 | V4_FIX 真机测试 | ⏳ 待主人 | IPA已编译 |
+| 1 | V4_FIX 真机测试 | ⏳ 待主人 | IPA已编译，主人晚上测试 |
 | 2 | Substack 注册 | ⏳ 待主人 | 主人晚上操作 |
 
 ### P1 - 本周
 
 | # | 任务 | 状态 | 工时 |
 |---|------|------|------|
-| 1 | Issue #1: Event Schema | ⏳ 待做 | 30min |
-| 2 | Issue #4: Export Bundle v0 | ⏳ 待做 | 30min |
-| 3 | Issue #8: ADR-001 | ⏳ 待做 | 20min |
-| 4 | Week 1 文章发布 | ⏳ 待Substack | 草稿已完成 |
+| ~~Issue #1~~ | ~~Event Schema~~ | ✅ 完成 | 2026-03-02 |
+| ~~Issue #2~~ | ~~Canonicalization~~ | ✅ 完成 | 2026-03-02 |
+| ~~Issue #3~~ | ~~Classification~~ | ✅ 完成 | 2026-03-02 |
+| ~~Issue #4~~ | ~~Export Bundle v0~~ | ✅ 完成 | 2026-03-02 |
+| ~~Issue #5~~ | ~~Chain Verification~~ | ✅ 完成 | 2026-03-02 |
+| ~~Issue #6~~ | ~~JSON Schema v0~~ | ✅ 完成 | 2026-03-02 |
+| ~~Issue #7~~ | ~~示例数据集~~ | ✅ 完成 | 2026-03-02 |
+| ~~Issue #8~~ | ~~ADR-001~~ | ✅ 完成 | 2026-03-02 |
+| Week 1 | 文章发布 | ⏳ 待Substack | 草稿已完成 |
 
 ### P2 - 下周
 
