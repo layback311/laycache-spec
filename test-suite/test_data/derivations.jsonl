@@ -1,0 +1,2 @@
+{"derivationId":"deriv_001","eventId":"evt_002","type":"classification","modelId":"glm-5","output":{"category":"work","priority":"high","sentiment":"neutral","confidence":0.95},"timestamp":"2026-03-01T11:05:00Z"}
+{"derivationId":"deriv_002","eventId":"evt_005","type":"summary","modelId":"glm-5","output":{"summary":"记录了LayCache的四个核心设计原则：可迁移、可验证、可审计、反锁定","keywords":["LayCache","设计原则","可迁移","可验证"]},"timestamp":"2026-03-02T10:05:00Z"}

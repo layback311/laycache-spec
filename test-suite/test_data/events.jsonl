@@ -1,0 +1,5 @@
+{"eventId":"evt_001","type":"user.preference","content":{"category":"communication","key":"style","value":"concise"},"timestamp":"2026-03-01T10:00:00Z","deviceId":"dev_test01","previousHash":null}
+{"eventId":"evt_002","type":"task.created","content":{"taskId":"task_abc123","title":"测试LayCache协议","priority":"P0","tags":["test","laycache"]},"timestamp":"2026-03-01T11:00:00Z","deviceId":"dev_test01","previousHash":"17d0942c3e0fd658"}
+{"eventId":"evt_003","type":"task.completed","content":{"taskId":"task_abc123","completedAt":"2026-03-01T15:30:00Z","notes":"所有测试通过"},"timestamp":"2026-03-01T15:30:00Z","deviceId":"dev_test01","previousHash":"9989cafeced8197e"}
+{"eventId":"evt_004","type":"decision.made","content":{"decisionId":"dec_xyz789","topic":"选择加密算法","choice":"Ed25519","reason":"高效、安全、广泛支持","alternatives":["RSA","ECDSA"]},"timestamp":"2026-03-02T09:00:00Z","deviceId":"dev_test01","previousHash":"a57c409a748052ba"}
+{"eventId":"evt_005","type":"note.created","content":{"noteId":"note_qwe456","title":"LayCache设计原则","body":"可迁移、可验证、可审计、反锁定","tags":["design","principles"]},"timestamp":"2026-03-02T10:00:00Z","deviceId":"dev_test01","previousHash":"5de3a837e03b192c"}

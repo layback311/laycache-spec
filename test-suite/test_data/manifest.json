@@ -1,0 +1,23 @@
+{
+  "version": "1.0.0",
+  "exportTime": "2026-03-02T21:00:00Z",
+  "deviceId": "dev_test01",
+  "chainRoot": "sha256:test_chain_root_hash",
+  "stats": {
+    "events": 5,
+    "commits": 2,
+    "blocks": 1,
+    "derivations": 2
+  },
+  "integrity": {
+    "eventsHash": "sha256:test_events_hash",
+    "commitsHash": "sha256:test_commits_hash",
+    "blocksHash": "sha256:test_blocks_hash",
+    "derivationsHash": "sha256:test_derivations_hash"
+  },
+  "verification": {
+    "algorithm": "SHA256-Chain",
+    "testData": true,
+    "description": "LayCache Reference Test Data v1.0"
+  }
+}

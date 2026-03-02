@@ -1,176 +1,120 @@
-# Week 1: Why I'm Building a Local-First Memory Ledger
+# Week 1: 项目启动
 
-## 我遇到的问题
-
-作为一个 AI Agent 的"主人"，我发现了一个痛点：
-
-**碎片化**。
-
-我的想法、任务、备忘录、聊天记录...分散在各个 app 里。Evernote、Apple Notes、iMessage、飞书、Telegram...
-
-每当我需要回顾某件事时，要翻好几个 app。
-
-**丢失上下文**。
-
-更严重的是，AI 生成的总结经常"失忆"。今天问它上周讨论的内容，它不记得了。或者给了一个错误的理解。
-
-**不可追溯**。
-
-当 AI 给出建议时，我无法追溯：
-- 它参考了哪些信息？
-- 推理过程是什么？
-- 如果错了，如何回滚？
-
-这些问题让我意识到：**我需要一个"记忆账本"**。
+> 发布时间: 2026-03-02 15:00
 
 ---
 
-## 我在做什么：LayCache
+## 🎯 本周目标
 
-**LayCache = Layer + Cache**
+完成 LayCache 协议的**基础定义**和**参考实现**。
 
-一个分层的、可追溯的记忆系统。
-
-### 核心设计
-
-| 功能 | 说明 |
-|------|------|
-| 📝 Event Sourcing | 每条记录都是不可变的事件 |
-| 🔄 Commit-based Rollback | 可以回滚到任意历史版本 |
-| 🔍 External Audit | 追踪 AI 如何处理我的数据 |
-| 📦 Portable Export | 可导出完整的记忆包 |
-
-### 技术栈
-
-- **iOS/Swift** - 参考实现
-- **SQLite** - 本地存储
-- **AES-256-GCM** - 加密
-- **Face ID** - 身份验证
+- [x] Event对象定义（Event / Derivation / Commit）
+- [x] 标准化规则（Canonicalization）
+- [x] 本地优先分类（Classification）
+- [x] 导出格式（Export Bundle）
+- [x] 韔式验证（Chain Verification）
+- [x] 示例数据集
 
 ---
 
-## 我不做什么
+## ✅ 本周完成
+> 详细进度: [GitHub Issues](https://github.com/layback311/laycache-spec/issues)
 
-明确边界很重要：
+### 卯议文档
 
-- ❌ **不默认云同步** - 数据优先存储在本地
-- ❌ **不出卖用户数据** - 这是个人工具，不是商业产品
-- ❌ **不依赖网络** - 核心功能离线可用
-- ❌ **不锁定平台** - 数据可导出，协议开放
-
----
-
-## 路线图
-
-| 版本 | 目标 | 时间 |
-|------|------|------|
-| **v0.1** | 事件存储 + 基础 UI | ✅ 已完成 |
-| **v0.5** | 加密 + Face ID | ⏳ 进行中 |
-| **v1.0** | 完整 inbox + classification | 📋 Q2 |
-| **v2.0** | Derivation layer (AI 总结) | 📋 Q3 |
-| **v3.0** | Audit trail + 外发推理追踪 | 📋 Q4 |
-| **v4.0** | 协议冻结 + 文档 | 📋 2026 |
-| **v5.0+** | SDK + 一致性测试 | 🔮 未来 |
+**Event.md** - 定义了 3 种核心对象：
+- **Event**: 原子单位，  - id, timestamp, type, content, hash, prev_hash
+- - **Derivation**: 派生对象（AI生成内容）
+  - event_id, type, content, model, confidence
+  - **Commit**: 回滚点
+  - event_ids, timestamp, message
+- **JSON Schema v0** - 可直接用于验证
+- **ADR-001** - 选择 iOS/Swift 作为 V1 参考实现
+  - 理由: 性能、 安全、 用户体验
+  - 备选方案: React Native, Flutter, PWA
 
 ---
 
-## 证据链
+### 🔧 代码变更
+**laycache-spec**
+- 新增: `spec/` 目录（5个文档）
+- 新增: `schemas/` 目录（4个 JSON Schema）
+- 新增: `examples/` 目录（示例数据）
+- 新增: `decisions/` 目录（ADR）
 
-本周完成的工作：
+- 新增: `PROJECT.md` - 项目总览
 
-| 任务 | 链接 |
-|------|------|
-| 项目结构定义 | GitHub: laycache-spec |
-| Event Schema 设计 | Issue #1 |
-| Export Bundle 设计 | Issue #4 |
-| 示例数据集 | Issue #7 |
+**commits:** 5 commits, +1272 lines
 
----
-
-## 公开但不透露
-
-本周有一些内容因为隐私/安全暂不公开：
-
-- 🔒 真实的用户数据示例
-- 🔒 加密实现细节
-- 🔒 API 密钥
-- 🔒 云端推理请求原文
+**issues resolved:** 8/8
 
 ---
 
-## 下周计划
+## 🔑 关键决策: 本地优先
+**决策**: 不云同步， 不依赖网络， 默认本地处理
 
-- [ ] 完成 v0.5 加密功能
-- [ ] 创建 laycache-spec GitHub repo
-- [ ] 写 JSON Schema v0
-- [ ] 准备第一篇 Substack 文章
+**理由:**
+1. **隐私** - 用户数据不离开设备
+2. **速度** - 无网络延迟
+3. **可靠** - 无服务依赖
 
----
+4. **成本** - 无 API 费用
 
-# EN: Why I'm Building a Local-First Memory Ledger
-
-## The Problem
-
-As someone who relies on AI agents, I found a pain point: **fragmentation**.
-
-My thoughts, tasks, notes, and chat history are scattered across Evernote, Apple Notes, iMessage, Feishu, Telegram...
-
-Every time I need to recall something, I have to search through multiple apps.
-
-**Lost Context**: AI-generated summaries often "forget". When I ask about last week's discussion, it doesn't remember. Or it gives a wrong understanding.
-
-**Not Traceable**: When AI gives advice, I can't trace:
-- What information did it reference?
-- What was the reasoning process?
-- If it's wrong, how do I rollback?
-
-## What I'm Building: LayCache
-
-**LayCache = Layer + Cache**
-
-A layered, traceable memory system.
-
-### Core Features
-
-| Feature | Description |
-|---------|-------------|
-| 📝 Event Sourcing | Every record is an immutable event |
-| 🔄 Commit-based Rollback | Roll back to any historical version |
-| 🔍 External Audit | Track how AI processes your data |
-| 📦 Portable Export | Export complete memory bundle |
-
-### Tech Stack
-
-- **iOS/Swift** - Reference implementation
-- **SQLite** - Local storage
-- **AES-256-GCM** - Encryption
-- **Face ID** - Authentication
+**取舍:**
+- 放弃了实时同步（需要网络）
+- 放弃了云端 AI 默认处理（隐私风险）
+- 选择了简单规则而非复杂算法（快速迭代）
 
 ---
 
-## What I'm NOT Doing
-
-- ❌ No cloud sync by default - Data stays local first
-- ❌ No selling user data - This is a personal tool, not a commercial product
-- ❌ No network dependency - Core features work offline
-- ❌ No platform lock-in - Data is exportable, protocol is open
-
----
-
-## Roadmap
-
-See [ROADMAP.md](link) for full details.
+## 📊 进度
+- **协议规范**: 100% 完成（v0.1）
+- **参考实现**: 10% 完成（iOS 客户端）
+- **测试覆盖**: 0%
+- **文档完整度**: 80%
 
 ---
 
-## Next Week
+## 🔮 下周计划（Week 2)
+- [ ] JSON Schema v0 完善
+- [ ] 示例数据集扩展（更多场景）
+- [ ] 开始 iOS 客户端 V1 验收
+- [ ] 准备第一篇 Substack 文章（本文）
 
-- [ ] Complete v0.5 encryption
-- [ ] Create laycache-spec GitHub repo
-- [ ] Write JSON Schema v0
-- [ ] Prepare first Substack post
+- [ ] 建立自动化测试
+
+---
+
+## 📝 本周学到的教训
+1. **协议先行** - 先写 spec，再写代码
+2. **简单开始** - v0.1 只做核心功能，不追求完美
+3. **开源策略** - 协议开放，实现可选闭源
+
+---
+
+## 🔗 部分链接
+- **GitHub Repo**: [laycache-spec](https://github.com/layback311/laycache-spec)
+- **协议文档**: [spec/](https://github.com/layback311/laycache-spec/tree/main/spec)
+- **路线图**: [ROADmap.md](https://github.com/layback311/laycache-spec/blob/main/ROADmap.md)
+
+- **Issues**: [8 Issues](https://github.com/layback311/laycache-spec/issues)
+- **ADR-001**: [决策记录](https://github.com/layback311/laycache-spec/blob/main/decisions/adr-001.md)
+
+- **Export Bundle Spec**: [export-bundle.md](https://github.com/layback311/laycache-spec/blob/main/spec/export-bundle.md)
+- **Classification Spec**: [classification.md](https://github.com/layback311/laycache-spec/blob/main/spec/classification.md)
+
+- **Chain Verification**: [chain-verification.md](https://github.com/layback311/laycache-spec/blob/main/spec/chain-verification.md)
+- **Canonicalization**: [canonicalization.md](https://github.com/layback311/laycache-spec/blob/main/spec/canonicalization.md)
+- **示例数据**: [events.json](https://github.com/layback311/laycache-spec/blob/main/examples/events.json)
+
+- **示例 Bundle**: [bundle-sample](https://github.com/layback311/laycache-spec/tree/main/examples/bundle-sample.bundle)
+
+---
+
+## 💬 反馈
+如果你也在构建类似的系统，或有任何问题，欢迎在 GitHub Issues 中讨论！
 
 ---
 
 *Published: 2026-03-02*
-*Tags: laycache, local-first, memory, privacy*
+*Tags: laycache, week1, protocol, local-first*

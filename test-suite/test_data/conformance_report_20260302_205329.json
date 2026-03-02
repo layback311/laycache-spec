@@ -1,0 +1,59 @@
+{
+  "timestamp": "2026-03-02T20:53:29.454675",
+  "implementationDir": "test_data",
+  "summary": {
+    "passed": 19,
+    "failed": 4,
+    "skipped": 0,
+    "score": 82
+  },
+  "results": [
+    {
+      "name": "Event Schema",
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "errors": []
+    },
+    {
+      "name": "Derivation Schema",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "errors": []
+    },
+    {
+      "name": "Commit Schema",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "errors": []
+    },
+    {
+      "name": "Canonicalization",
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "errors": []
+    },
+    {
+      "name": "Hash Chain",
+      "passed": 0,
+      "failed": 4,
+      "skipped": 0,
+      "errors": [
+        "Event 1: previousHash不匹配 (期望: 17d0942c3e0fd658, 实际: 5d7d9d1a1f3b4c6e)",
+        "Event 2: previousHash不匹配 (期望: e2d50d545fcf7f7f, 实际: 6e8e0e2b2g4c5d7f)",
+        "Event 3: previousHash不匹配 (期望: d863f4a14c477e4c, 实际: 7f9f1f3c3h5d6e8g)",
+        "Event 4: previousHash不匹配 (期望: 1803fabe765d3b0a, 实际: 8g0g2g4d4i6e7f9h)"
+      ]
+    },
+    {
+      "name": "Bundle Format",
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "errors": []
+    }
+  ]
+}

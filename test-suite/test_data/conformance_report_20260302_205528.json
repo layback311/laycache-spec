@@ -1,0 +1,54 @@
+{
+  "timestamp": "2026-03-02T20:55:28.698201",
+  "implementationDir": "test_data",
+  "summary": {
+    "passed": 23,
+    "failed": 0,
+    "skipped": 0,
+    "score": 100
+  },
+  "results": [
+    {
+      "name": "Event Schema",
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "errors": []
+    },
+    {
+      "name": "Derivation Schema",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "errors": []
+    },
+    {
+      "name": "Commit Schema",
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "errors": []
+    },
+    {
+      "name": "Canonicalization",
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "errors": []
+    },
+    {
+      "name": "Hash Chain",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "errors": []
+    },
+    {
+      "name": "Bundle Format",
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "errors": []
+    }
+  ]
+}
