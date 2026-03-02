@@ -1,0 +1,10 @@
+{
+  "id": "b2c3d4e5f6789012345678abcdef012",
+  "timestamp": "2026-03-02T10:05:00Z",
+  "type": "capture",
+  "content": "买牛奶、鸡蛋、面包",
+  "hash": "a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434",
+  "prev_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "device_id": "dev_abc123def456",
+  "payload_encrypted": false
+}

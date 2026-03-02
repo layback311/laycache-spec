@@ -1,0 +1,10 @@
+{
+  "id": "a1b2c3d4e5f6789012345678abcdef01",
+  "timestamp": "2026-03-02T10:00:00Z",
+  "type": "capture",
+  "content": "明天下午3点开会",
+  "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "prev_hash": null,
+  "device_id": "dev_abc123def456",
+  "payload_encrypted": false
+}

@@ -1,0 +1,10 @@
+{
+  "id": "c3d4e5f6789012345678abcdef0123",
+  "timestamp": "2026-03-02T10:10:00Z",
+  "type": "capture",
+  "content": "记得给妈妈打电话",
+  "hash": "b5bb9d8014a0f9b1d61e4e5f4d7a1f3e3d8e4c8f8d9a0b1c2d3e4f5a6b7c8d",
+  "prev_hash": "a7ffc6f8bf1ed76651c14756a061d662f580ff4de43b49fa82d80a4b80f8434",
+  "device_id": "dev_abc123def456",
+  "payload_encrypted": false
+}

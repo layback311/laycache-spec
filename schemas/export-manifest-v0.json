@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://laycache.dev/schemas/export-manifest-v0.json",
+  "title": "LayCache Export Manifest v0",
+  "description": "导出Bundle的元数据文件",
+  "type": "object",
+  "required": [
+    "version",
+    "exported_at",
+    "device_id",
+    "event_count",
+    "derivation_count",
+    "commit_count",
+    "chain_head_hash",
+    "checksum"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+$",
+      "description": "协议版本（如0.1）"
+    },
+    "exported_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "导出时间戳（UTC）"
+    },
+    "device_id": {
+      "type": "string",
+      "description": "导出设备ID"
+    },
+    "event_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Event数量"
+    },
+    "derivation_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Derivation数量"
+    },
+    "commit_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Commit数量"
+    },
+    "chain_head_hash": {
+      "type": ["string", "null"],
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "Event链头hash（最新Event）"
+    },
+    "encryption": {
+      "type": "object",
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "enum": ["AES-256-GCM", "none"]
+        },
+        "key_derivation": {
+          "type": "string",
+          "enum": ["PBKDF2", "Argon2id", "none"]
+        },
+        "encrypted": {
+          "type": "boolean"
+        },
+        "salt": {
+          "type": "string",
+          "pattern": "^[a-f0-9]+$"
+        }
+      }
+    },
+    "checksum": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "Bundle SHA-256校验和"
+    }
+  }
+}

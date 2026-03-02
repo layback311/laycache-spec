@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "exported_at": "2026-03-02T14:30:00Z",
+  "device_id": "dev_abc123def456",
+  "event_count": 5,
+  "derivation_count": 0,
+  "commit_count": 0,
+  "chain_head_hash": "d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f",
+  "encryption": {
+    "algorithm": "none",
+    "key_derivation": "none",
+    "encrypted": false
+  },
+  "checksum": "a1b2c3d4e5f6789012345678abcdef90a1b2c3d4e5f6789012345678abcdef90"
+}

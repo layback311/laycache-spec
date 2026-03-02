@@ -1,0 +1,10 @@
+{
+  "id": "d4e5f6789012345678abcdef01234",
+  "timestamp": "2026-03-02T10:15:00Z",
+  "type": "capture",
+  "content": "周报要交，截止日期是周五",
+  "hash": "c9f9f8e7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1",
+  "prev_hash": "b5bb9d8014a0f9b1d61e4e5f4d7a1f3e3d8e4c8f8d9a0b1c2d3e4f5a6b7c8d",
+  "device_id": "dev_abc123def456",
+  "payload_encrypted": false
+}
