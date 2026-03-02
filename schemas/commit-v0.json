@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://laycache.dev/schemas/commit-v0.json",
+  "title": "LayCache Commit v0",
+  "description": "提交对象，代表一个可回滚的快照点",
+  "type": "object",
+  "required": ["id", "timestamp", "event_ids"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{32}$",
+      "description": "UUID v4"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "UTC时间戳"
+    },
+    "event_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{32}$"
+      },
+      "description": "包含的Event ID数组"
+    },
+    "message": {
+      "type": "string",
+      "description": "提交消息（可选）"
+    },
+    "parent_commit_id": {
+      "type": ["string", "null"],
+      "pattern": "^[a-f0-9]{32}$",
+      "description": "父Commit ID（链式）"
+    }
+  }
+}

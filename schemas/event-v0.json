@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://laycache.dev/schemas/event-v0.json",
+  "title": "LayCache Event v0",
+  "description": "原子单位，代表一次不可变的数据捕获",
+  "type": "object",
+  "required": ["id", "timestamp", "type", "content", "hash", "device_id"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{32}$",
+      "description": "UUID v4, 去掉连字符"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 UTC时间戳"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["capture", "derivation", "commit"],
+      "description": "Event类型"
+    },
+    "content": {
+      "type": "string",
+      "description": "用户输入内容"
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA-256 hash of content"
+    },
+    "prev_hash": {
+      "type": ["string", "null"],
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "前一个Event的hash（链式）"
+    },
+    "device_id": {
+      "type": "string",
+      "description": "设备唯一标识"
+    },
+    "payload_encrypted": {
+      "type": "boolean",
+      "default": false,
+      "description": "是否加密"
+    }
+  }
+}
